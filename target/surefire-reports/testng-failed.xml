@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="1" guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [TestNG Automation]" parallel="tests">
+  <listeners>
+    <listener class-name="com.test.core.Retrylistner"/>
+  </listeners>
+  <test thread-count="1" verbose="0" name="Login Negative test(failed)" parallel="tests">
+    <parameter name="browser" value="chrome"/>
+    <parameter name="testId" value="TC02"/>
+    <classes>
+      <class name="com.test.flow.LoginNegativeFlow">
+        <methods>
+          <include name="afterTestActivity"/>
+          <include name="LoginApp"/>
+          <include name="setup"/>
+          <include name="launchLogin"/>
+          <include name="afterTest"/>
+        </methods>
+      </class> <!-- com.test.flow.LoginNegativeFlow -->
+    </classes>
+  </test> <!-- Login Negative test(failed) -->
+</suite> <!-- Failed suite [TestNG Automation] -->

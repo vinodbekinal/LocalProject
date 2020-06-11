@@ -1,0 +1,46 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="TestNG Automation" parallel="tests" thread-count="1">
+<listeners>
+		<listener class-name = "com.test.core.Retrylistner" />
+		</listeners>
+		 <test name="Login test">
+		     <!-- <groups>
+	 <include name="smokeTest"/>
+	 <include name="functionalTest"/>   
+				</groups> -->
+			<parameter name="testId" value="TC01"/>
+			<parameter name="browser" value="chrome"/>
+		    <classes>
+		          <class name="com.test.flow.LoginFlow" ></class>
+		          
+		    </classes>
+		</test>
+		
+		<test name="Login Negative test">
+		     <!-- <groups>
+	 <include name="smokeTest"/>
+	 <include name="functionalTest"/>   
+				</groups> -->
+				
+			<parameter name="testId" value="TC02"/>
+			<parameter name="browser" value="chrome"/>
+		    <classes>
+		          <class name="com.test.flow.LoginNegativeFlow" ></class>
+		          
+		    </classes>
+		</test>
+		
+	   <test name="Search Product">
+		    <!--  <groups>
+	 <include name="smokeTest"/>
+	 <include name="functionalTest"/>   
+				</groups> -->
+			<parameter name="testId" value="TC03"/>
+			<parameter name="browser" value="chrome"/>
+		    <classes>
+		           <class name="com.test.flow.SearchFlow" ></class>
+		    </classes>
+		</test> 
+			
+</suite>
+
