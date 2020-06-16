@@ -63,12 +63,18 @@ public class LoginPage{
 	}
 	
 public void doLoginandverify(){
-		
+		try{
 		signin.click();
 		
 		driver.findElement(By.id("email")).sendKeys(login.getUserName());
+		try{
 		driver.findElement(By.id("passwd")).sendKeys(login.getPwd());
+		}
+		catch(Exception e){
+			System.out.println("Invalida password");
+		}
 		driver.findElement(By.id("passwd")).sendKeys(Keys.ENTER);
+		
 		Assert.assertTrue(username.isDisplayed(),
 				"The user is logged in.");
 
@@ -79,8 +85,10 @@ public void doLoginandverify(){
 		
 		
 	}
-
+catch (Exception e) {
+	System.out.println(e.toString());
+}
 
 	
-	
+}
 }
