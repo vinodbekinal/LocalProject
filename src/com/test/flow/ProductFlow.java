@@ -1,5 +1,10 @@
 package com.test.flow;
 
-public class ProductFlow {
+import org.testng.annotations.Test;
 
+public class ProductFlow {
+@Test
+public void getprodutc(){
+	
+}
 }
